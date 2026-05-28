@@ -94,13 +94,13 @@ h1, h2, h3,
   background: rgba(255,255,255,.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(200,161,133,.13);
-  height: 90px; padding: 0 64px;
+  height: 112px; padding: 0 64px;
   display: flex; align-items: center; justify-content: space-between;
   transition: box-shadow .3s;
 }
 #nav.shadow { box-shadow: 0 4px 32px rgba(200,161,133,.12); }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo img { height: 73px; width: auto; max-width: 286px; object-fit: contain; }
+.nav-logo img { height: 106px; width: auto; max-width: 412px; object-fit: contain; }
 .nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
 .nav-links a { font-size: var(--fs-ui); font-weight: 400; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color .3s; }
 .nav-links a:hover { color: var(--gold); }
@@ -115,6 +115,54 @@ h1, h2, h3,
 }
 .nav-call:hover { background: var(--gold-dk); }
 .nav-call svg { width: 13px; height: 13px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid rgba(200,161,133,.35);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color .25s, background .25s;
+}
+.nav-toggle:hover { border-color: var(--gold); background: var(--blush); }
+.nav-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--mid);
+  transition: transform .3s ease, opacity .3s ease;
+}
+#nav.open .nav-toggle-bar:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+#nav.open .nav-toggle-bar:nth-child(2) { opacity: 0; }
+#nav.open .nav-toggle-bar:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.nav-panel {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-left: auto;
+}
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20,16,15,.45);
+  z-index: 199;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+.nav-backdrop.visible {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+body.nav-open { overflow: hidden; }
 
 /* ─── HERO ────────────────────────────────────────── */
 #hero {
@@ -264,25 +312,6 @@ h1, h2, h3,
   transition: transform .8s ease;
 }
 .chi-photo:hover img { transform: scale(1.03); }
-.chi-tag,
-.perche-badge {
-  background: var(--gold);
-  padding: 20px 28px;
-}
-.chi-tag {
-  position: absolute; bottom: 0; right: 0;
-  min-width: 210px;
-}
-.chi-tag p,
-.pb-txt p {
-  font-size: var(--fs-body);
-  font-weight: 400;
-  line-height: 1.3;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 0;
-}
 
 /* ─── TRATTAMENTI ─────────────────────────────────── */
 #trattamenti {
@@ -301,6 +330,29 @@ h1, h2, h3,
   margin-bottom: 60px;
 }
 .trat-intro { font-size: var(--fs-body); font-weight: 300; line-height: var(--lh-body); color: var(--mid); }
+.trat-header-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.trat-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  background: var(--gold);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 2px;
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .3s, transform .3s;
+}
+.trat-cta:hover { background: var(--gold-dk); transform: translateY(-2px); }
+.trat-cta svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; }
 .trat-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1px; background: rgba(200,161,133,.18);
@@ -314,10 +366,17 @@ h1, h2, h3,
   content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
   background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .35s;
 }
-.trat-card:hover { background: var(--dark); transform: translateY(-3px); }
-.trat-card:hover .tc-icon { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.25); color: #fff; }
-.trat-card:hover .tc-title { color: #fff; }
-.trat-card:hover .tc-text { color: rgba(255,255,255,.75); }
+.trat-card:hover {
+  background: var(--blush);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(200,161,133,.14);
+}
+.trat-card:hover .tc-icon {
+  background: #fff;
+  border-color: rgba(200,161,133,.45);
+}
+.trat-card:hover .tc-title { color: var(--gold-dk); }
+.trat-card:hover .tc-text { color: var(--mid); }
 .trat-card:hover::after { transform: scaleX(1); }
 .tc-icon {
   width: 48px; height: 48px; background: var(--blush);
@@ -335,7 +394,7 @@ h1, h2, h3,
   filter: brightness(0) saturate(100%) invert(58%) sepia(22%) saturate(520%) hue-rotate(349deg) brightness(95%) contrast(88%);
 }
 .trat-card:hover .tc-icon img {
-  filter: brightness(0) invert(1);
+  filter: brightness(0) saturate(100%) invert(48%) sepia(28%) saturate(620%) hue-rotate(349deg) brightness(88%) contrast(90%);
 }
 .tc-title {
   font-size: var(--fs-h3);
@@ -358,16 +417,6 @@ h1, h2, h3,
 .perche-photo { position: relative; overflow: hidden; }
 .perche-photo img { height: 100%; object-position: center; transition: transform .8s ease; }
 .perche-photo:hover img { transform: scale(1.03); }
-.perche-badge {
-  position: absolute; bottom: 0; left: 0;
-  display: flex; align-items: center;
-}
-.pb-icon {
-  width: 44px; height: 44px; background: rgba(255,255,255,.2);
-  border-radius: 50%; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-}
-.pb-icon svg { width: 19px; height: 19px; stroke: #fff; fill: none; stroke-width: 1.4; stroke-linecap: round; }
 .perche-content {
   background: var(--white);
   padding: 88px 72px 88px 80px;
@@ -481,7 +530,7 @@ h1, h2, h3,
   color: var(--light);
 }
 .ct-phone-v {
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   font-weight: 400;
   line-height: var(--lh-snug);
   color: var(--gold);
@@ -537,9 +586,9 @@ footer {
   line-height: 0;
 }
 .ft-logo img {
-  height: 88px;
+  height: 114px;
   width: auto;
-  max-width: 240px;
+  max-width: 312px;
   object-fit: contain;
   display: block;
 }
@@ -624,7 +673,7 @@ footer {
   gap: 12px;
   padding: 9px 0;
   border-bottom: 1px solid rgba(200,161,133,.1);
-  font-size: var(--fs-small);
+  font-size: var(--fs-body);
   font-weight: 300;
 }
 .ft-hours-row:last-child { border-bottom: none; padding-bottom: 0; }
@@ -685,32 +734,149 @@ footer {
 
 /* ─── RESPONSIVE ──────────────────────────────────── */
 @media (max-width: 1080px) {
-  .topbar, #nav, #contatti { padding-left: 32px; padding-right: 32px; }
+  .topbar { padding-left: 32px; padding-right: 32px; flex-wrap: wrap; gap: 12px 24px; }
+  #nav { padding-left: 32px; padding-right: 32px; }
   #chi-siamo, #perche { grid-template-columns: 1fr; min-height: auto; }
-  .chi-content, .perche-content { padding: 64px 32px; }
-  .chi-photo, .perche-photo { min-height: 420px; }
-  .trat-header { grid-template-columns: 1fr; }
+  .chi-photo { order: -1; }
+  .perche-photo { order: -1; }
+  .chi-content, .perche-content { padding: 72px 32px; }
+  .chi-photo, .perche-photo { min-height: 380px; }
+  .trat-header { grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px; }
   #trattamenti { padding: 80px 32px; }
   .trat-grid { grid-template-columns: repeat(2, 1fr); }
-  .contatti-wrap { grid-template-columns: 1fr; gap: 52px; }
+  .contatti-wrap { grid-template-columns: 1fr; gap: 48px; }
   #contatti { padding: 80px 32px; }
-  .ct-phones { grid-template-columns: 1fr; }
+  .ct-phones { grid-template-columns: 1fr 1fr; }
   .footer-inner { padding: 48px 32px 0; }
   .footer-main {
     grid-template-columns: 1fr 1fr;
-    gap: 36px 32px;
+    gap: 36px 28px;
   }
-  .ft-brand { grid-column: 1 / -1; max-width: none; }
+  .ft-brand { grid-column: 1 / -1; }
+  .ft-tagline { max-width: none; }
 }
-@media (max-width: 700px) {
+
+@media (max-width: 768px) {
+  :root {
+    --fs-display: clamp(2.125rem, 8.5vw, 3rem);
+    --fs-h2: clamp(1.75rem, 6.5vw, 2.25rem);
+    --fs-h3: 1.25rem;
+    --fs-lead: 1.125rem;
+  }
   .topbar { display: none; }
-  .nav-links { display: none; }
-  .trat-grid { grid-template-columns: 1fr; }
+  #nav {
+    height: 80px;
+    padding: 0 20px;
+    gap: 12px;
+  }
+  .nav-logo img { height: 70px; max-width: 264px; }
+  .nav-toggle { display: flex; }
+  .nav-panel {
+    margin-left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 201;
+    width: min(88vw, 320px);
+    height: 100dvh;
+    height: 100svh;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 88px 28px 32px;
+    background: rgba(255,255,255,.98);
+    backdrop-filter: blur(16px);
+    border-left: 1px solid rgba(200,161,133,.2);
+    box-shadow: -8px 0 40px rgba(42,35,32,.12);
+    transform: translateX(100%);
+    transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+    overflow-y: auto;
+  }
+  #nav.open .nav-panel { transform: translateX(0); }
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+  .nav-links li { border-bottom: 1px solid rgba(200,161,133,.15); }
+  .nav-links a {
+    display: block;
+    padding: 16px 0;
+    font-size: 0.875rem;
+    letter-spacing: .14em;
+  }
+  .nav-panel .nav-call {
+    margin-top: 24px;
+    justify-content: center;
+    width: 100%;
+    padding: 16px 20px;
+  }
+  #hero {
+    min-height: 100svh;
+    height: auto;
+    min-height: 100dvh;
+  }
+  .hero-body { padding: 100px 20px 48px; justify-content: flex-end; min-height: 100svh; min-height: 100dvh; }
+  .hero-eyebrow { letter-spacing: .22em; margin-bottom: 18px; }
+  .hero-sub { margin-bottom: 32px; }
+  .hero-cta-main { width: 100%; max-width: 320px; justify-content: center; padding: 16px 24px; }
+  .chi-content, .perche-content { padding: 56px 20px; }
+  .chi-photo, .perche-photo { min-height: 320px; }
   .chi-stats { flex-direction: column; }
-  .hero-title { font-size: clamp(2.25rem, 9vw, 3.25rem); }
+  .chi-stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(200,161,133,.2);
+    padding: 20px 0;
+  }
+  .chi-stat:last-child { border-bottom: none; }
+  #trattamenti { padding: 64px 20px; }
+  .trat-cta { width: 100%; max-width: 320px; justify-content: center; }
+  .trat-grid { grid-template-columns: 1fr; }
+  .trat-card { padding: 32px 24px; }
+  .perche-content { padding: 56px 20px; }
+  .perche-list { margin-top: 32px; }
+  .perche-item { padding: 24px 0; gap: 14px; }
+  .pi-icon { width: 44px; height: 44px; }
+  #contatti { padding: 64px 20px; }
+  .contatti-wrap { gap: 40px; }
+  .ct-panel { padding: 24px 20px; }
+  .ct-phones { grid-template-columns: 1fr; }
+  .ct-hours-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .ct-hours-time { text-align: left; white-space: normal; }
+  .footer-inner { padding: 40px 20px 0; }
   .footer-main { grid-template-columns: 1fr; gap: 32px; }
-  .ft-bar { flex-direction: column; align-items: flex-start; }
+  .ft-logo img { height: 96px; max-width: 260px; }
+  .ft-bar { flex-direction: column; align-items: stretch; gap: 16px; }
   .ft-cta { width: 100%; justify-content: center; }
+  .ft-hours-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 12px 0;
+  }
+  .ft-hours-time { text-align: left; white-space: normal; }
+}
+
+@media (max-width: 480px) {
+  #nav { height: 74px; padding: 0 16px; }
+  .nav-logo img { height: 62px; max-width: 228px; }
+  .nav-panel { width: 100%; max-width: none; padding-top: 80px; }
+  .hero-body { padding: 88px 16px 40px; }
+  .hero-eyebrow { font-size: 0.6875rem; letter-spacing: .18em; }
+  .hero-cta-main { letter-spacing: .16em; font-size: 0.75rem; }
+  .sec-eye { letter-spacing: .2em; }
+  .sec-eye::before { width: 16px; }
+  .chi-content, .perche-content { padding: 48px 16px; }
+  .chi-photo, .perche-photo { min-height: 280px; }
+  #trattamenti, #contatti { padding: 56px 16px; }
+  .trat-card { padding: 28px 20px; }
+  .footer-inner { padding: 36px 16px 0; }
+  .ft-logo img { height: 84px; }
 }
 </style>
 </head>
@@ -741,20 +907,28 @@ footer {
 </div>
 
 <!-- NAV -->
+<div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 <nav id="nav">
   <a href="#hero" class="nav-logo">
     <img src="./immagini/loghi/logo carlotta pecora.png" alt="Logo Studio Dentistico Carlotta Pecora">
   </a>
-  <ul class="nav-links">
-    <li><a href="#chi-siamo">Chi Siamo</a></li>
-    <li><a href="#trattamenti">Trattamenti</a></li>
-    <li><a href="#perche">Perché Noi</a></li>
-    <li><a href="#contatti">Contatti</a></li>
-  </ul>
-  <a href="tel:+390681566281" class="nav-call">
-    <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
-    Chiama ora
-  </a>
+  <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-panel">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div class="nav-panel" id="nav-panel">
+    <ul class="nav-links">
+      <li><a href="#chi-siamo">Chi Siamo</a></li>
+      <li><a href="#trattamenti">Trattamenti</a></li>
+      <li><a href="#perche">Perché Noi</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+    <a href="tel:+390681566281" class="nav-call">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+      Chiama ora
+    </a>
+  </div>
 </nav>
 
 <!-- ══ HERO ══ -->
@@ -800,9 +974,6 @@ footer {
   </div>
   <div class="chi-photo">
     <img src="./immagini/chi-siamo-carlotta-pecora.png?v=2" alt="Dott.ssa Carlotta Pecora, studio dentistico Roma EUR">
-    <div class="chi-tag">
-      <p>Dott.ssa Carlotta Pecora</p>
-    </div>
   </div>
 </section>
 
@@ -813,7 +984,13 @@ footer {
       <div class="sec-eye">I Nostri Trattamenti</div>
       <h2 class="sec-h2">Trattamenti odontoiatrici<br>e <em>medicina estetica</em> a Roma EUR</h2>
     </div>
-    <p class="trat-intro">La nostra offerta clinica copre tutte le principali aree dell'odontoiatria: prevenzione, conservativa, estetica, chirurgia orale, implantologia, ortodonzia e pedodonzia. A queste affianchiamo la medicina estetica facciale, con trattamenti mirati per valorizzare il volto in armonia con il sorriso.</p>
+    <div class="trat-header-col">
+      <p class="trat-intro">La nostra offerta clinica copre tutte le principali aree dell'odontoiatria: prevenzione, conservativa, estetica, chirurgia orale, implantologia, ortodonzia e pedodonzia. A queste affianchiamo la medicina estetica facciale, con trattamenti mirati per valorizzare il volto in armonia con il sorriso.</p>
+      <a href="tel:+390681566281" class="trat-cta">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+        Chiama per prenotare
+      </a>
+    </div>
   </div>
   <div class="trat-grid">
     <div class="trat-card reveal">
@@ -863,11 +1040,6 @@ footer {
 <section id="perche">
   <div class="perche-photo">
     <img src="./immagini/perché-sceglierci-carlotta-pecora.jpg" alt="Studio Dentistico Carlotta Pecora Roma EUR">
-    <div class="perche-badge">
-      <div class="pb-txt">
-        <p>Medici altamente esperti</p>
-      </div>
-    </div>
   </div>
   <div class="perche-content reveal">
     <div class="sec-eye">Perché Sceglierci</div>
@@ -918,7 +1090,7 @@ footer {
         <p class="ct-studio">Studio dentistico<br>Carlotta Pecora</p>
         <div class="ct-block">
           <p class="ct-label">Indirizzo</p>
-          <p class="ct-value">Viale America 111 | Piano 3 int. 16<br>00144 Roma</p>
+          <p class="ct-value">Viale America 111 00144 Roma<br>Piano 3 int. 16</p>
         </div>
         <div class="ct-block">
           <p class="ct-label">Telefoni</p>
@@ -996,7 +1168,7 @@ footer {
         <h3 class="ft-heading">Sede e orari</h3>
         <address class="ft-address">
           <a href="https://www.google.com/maps/search/?api=1&query=Viale+America+111+00144+Roma" target="_blank" rel="noopener noreferrer">
-            Viale America 111, Piano 3 int. 16<br>00144 Roma (EUR)
+            Viale America 111 00144 Roma<br>Piano 3 int. 16
           </a>
         </address>
         <div class="ft-hours" aria-label="Orari di apertura">
@@ -1027,7 +1199,40 @@ footer {
 
 <script>
 const nav = document.getElementById('nav');
+const navToggle = document.getElementById('nav-toggle');
+const navBackdrop = document.getElementById('nav-backdrop');
+
+function closeNavMenu() {
+  nav.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.setAttribute('aria-label', 'Apri menu');
+  navBackdrop.classList.remove('visible');
+  document.body.classList.remove('nav-open');
+}
+
+function openNavMenu() {
+  nav.classList.add('open');
+  navToggle.setAttribute('aria-expanded', 'true');
+  navToggle.setAttribute('aria-label', 'Chiudi menu');
+  navBackdrop.classList.add('visible');
+  document.body.classList.add('nav-open');
+}
+
+navToggle.addEventListener('click', () => {
+  nav.classList.contains('open') ? closeNavMenu() : openNavMenu();
+});
+navBackdrop.addEventListener('click', closeNavMenu);
+document.querySelectorAll('#nav-panel a').forEach(link => {
+  link.addEventListener('click', closeNavMenu);
+});
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) closeNavMenu();
+});
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeNavMenu();
+});
 window.addEventListener('scroll', () => nav.classList.toggle('shadow', scrollY > 10));
+
 const io = new IntersectionObserver(
   es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
   { threshold: .1, rootMargin: '0px 0px -30px 0px' }
