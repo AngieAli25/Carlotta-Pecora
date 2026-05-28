@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Dentistico Carlotta Pecora | Dentista Roma EUR</title>
+<meta name="description" content="Studio Dentistico Carlotta Pecora a Roma EUR: prevenzione, igiene, estetica dentale, implantologia, ortodonzia e medicina estetica facciale. Contatti e orari." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: "Feather";
+  src: local("Feather");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --gold:      #c8a185;
+  --gold-dk:   #a87d60;
+  --blush:     #fae8db;
+  --blush-mid: #f0d5c0;
+  --cream:     #fdf7f2;
+  --white:     #ffffff;
+  --dark:      #2a2320;
+  --mid:       #5c4a3e;
+  --light:     #a08070;
+  --lighter:   #d4c0b2;
+  --font: "Feather", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --fs-display: clamp(2.75rem, 6vw, 4.25rem);
+  --fs-h2: clamp(2rem, 3.8vw, 3rem);
+  --fs-h3: 1.375rem;
+  --fs-lead: 1.25rem;
+  --fs-body: 1rem;
+  --fs-ui: 0.8125rem;
+  --fs-small: 0.75rem;
+  --lh-tight: 1.12;
+  --lh-snug: 1.35;
+  --lh-body: 1.75;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  background: var(--white);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+img  { display: block; width: 100%; object-fit: cover; }
+p, a, li, span, button, label { font-family: var(--font); }
+h1, h2, h3,
+.hero-title,
+.sec-h2,
+.sec-h3,
+.tc-title,
+.pi-title,
+.ct-studio,
+.chi-stat-n {
+  font-family: var(--font-serif);
+}
+
+/* ─── TOP BAR ─────────────────────────────────────── */
+.topbar {
+  background: var(--dark);
+  padding: 9px 64px;
+  display: flex; align-items: center; gap: 32px;
+}
+.tb-item {
+  display: flex; align-items: center; gap: 7px;
+  font-size: var(--fs-small); font-weight: 300;
+  letter-spacing: 0.1em; color: rgba(250,232,219,.55);
+}
+.tb-item svg { width: 12px; height: 12px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; flex-shrink: 0; }
+.tb-item strong { color: var(--gold); font-weight: 400; }
+.tb-social { margin-left: auto; display: flex; gap: 12px; }
+.tb-social a {
+  width: 27px; height: 27px; border-radius: 50%;
+  border: 1px solid rgba(200,161,133,.3);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); transition: background .3s, border-color .3s;
+}
+.tb-social a:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
+.tb-social svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; }
+
+/* ─── NAV ─────────────────────────────────────────── */
+#nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,161,133,.13);
+  height: 90px; padding: 0 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: box-shadow .3s;
+}
+#nav.shadow { box-shadow: 0 4px 32px rgba(200,161,133,.12); }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 73px; width: auto; max-width: 286px; object-fit: contain; }
+.nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
+.nav-links a { font-size: var(--fs-ui); font-weight: 400; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color .3s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-call {
+  display: flex; align-items: center; gap: 9px;
+  background: var(--gold); color: #fff;
+  padding: 11px 22px; border-radius: 2px;
+  font-size: var(--fs-ui); font-weight: 400;
+  letter-spacing: .18em; text-transform: uppercase;
+  text-decoration: none; transition: background .3s;
+  flex-shrink: 0;
+}
+.nav-call:hover { background: var(--gold-dk); }
+.nav-call svg { width: 13px; height: 13px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; }
+
+/* ─── HERO ────────────────────────────────────────── */
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  background-image: url('./immagini/hero-carlotta-pecora.jpg');
+  background-size: cover; background-position: center 30%;
+  transform: scale(1.04);
+  animation: zoomOut 14s ease-out forwards;
+}
+@keyframes zoomOut { from { transform: scale(1.04); } to { transform: scale(1.0); } }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(20,16,15,.42) 0%, rgba(20,16,15,.7) 60%, rgba(20,16,15,.84) 100%);
+}
+.hero-body {
+  position: relative; z-index: 2;
+  height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 0 32px;
+}
+.hero-eyebrow {
+  font-size: var(--fs-ui); font-weight: 400;
+  letter-spacing: .38em; text-transform: uppercase;
+  color: rgba(250,232,219,.7);
+  margin-bottom: 24px;
+  opacity: 0; animation: fadeUp .8s .5s forwards;
+}
+.hero-title {
+  font-size: var(--fs-display);
+  font-weight: 300;
+  line-height: var(--lh-tight);
+  color: var(--white);
+  max-width: 800px;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp .9s .65s forwards;
+}
+.hero-title em { font-style: italic; font-weight: 400; color: var(--blush); }
+.hero-sub {
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  letter-spacing: .02em;
+  color: rgba(250,232,219,.78); max-width: 500px;
+  margin-bottom: 48px;
+  opacity: 0; animation: fadeUp .9s .8s forwards;
+}
+.hero-cta-group {
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+  opacity: 0; animation: fadeUp .9s .95s forwards;
+}
+.hero-cta-main {
+  display: flex; align-items: center; gap: 13px;
+  background: var(--gold); color: #fff;
+  padding: 18px 42px; border-radius: 2px;
+  font-size: var(--fs-ui); font-weight: 400;
+  letter-spacing: .22em; text-transform: uppercase;
+  text-decoration: none; transition: background .3s, transform .3s;
+}
+.hero-cta-main:hover { background: var(--gold-dk); transform: translateY(-2px); }
+.hero-cta-main svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; }
+
+/* ─── SECTION COMMONS ─────────────────────────────── */
+.sec-eye {
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+.sec-eye::before { content:''; width:22px; height:1px; background:var(--gold); display:block; }
+.sec-h2 {
+  font-size: var(--fs-h2);
+  font-weight: 300;
+  line-height: var(--lh-tight);
+  color: var(--dark);
+  margin-bottom: 14px;
+}
+.sec-h2 em { font-style: italic; font-weight: 400; color: var(--gold); }
+.sec-h3 {
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--light);
+  margin-bottom: 28px;
+}
+.sec-body {
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  color: var(--mid);
+  letter-spacing: .01em;
+  margin-bottom: 16px;
+}
+.sec-body strong { font-weight: 400; color: var(--dark); }
+
+/* ─── CHI SIAMO ───────────────────────────────────── */
+#chi-siamo { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+.chi-content {
+  padding: 100px 68px 80px 80px;
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--white);
+}
+.chi-stats {
+  display: flex; margin-top: 40px;
+  border-top: 1px solid rgba(200,161,133,.2);
+}
+.chi-stat {
+  flex: 1; padding: 28px 0; text-align: center;
+  border-right: 1px solid rgba(200,161,133,.2);
+}
+.chi-stat:last-child { border-right: none; }
+.chi-stat-n {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+  margin-bottom: 6px;
+}
+.chi-stat-l {
+  font-size: var(--fs-small);
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--lighter);
+}
+.chi-photo {
+  position: relative; overflow: hidden;
+}
+.chi-photo img {
+  height: 100%;
+  object-fit: cover;
+  object-position: 44% 12%;
+  transition: transform .8s ease;
+}
+.chi-photo:hover img { transform: scale(1.03); }
+.chi-tag,
+.perche-badge {
+  background: var(--gold);
+  padding: 20px 28px;
+}
+.chi-tag {
+  position: absolute; bottom: 0; right: 0;
+  min-width: 210px;
+}
+.chi-tag p,
+.pb-txt p {
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+/* ─── TRATTAMENTI ─────────────────────────────────── */
+#trattamenti {
+  background: var(--cream);
+  padding: 108px 80px;
+  position: relative; overflow: hidden;
+}
+#trattamenti::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 95% 50%, rgba(200,161,133,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.trat-header {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end;
+  margin-bottom: 60px;
+}
+.trat-intro { font-size: var(--fs-body); font-weight: 300; line-height: var(--lh-body); color: var(--mid); }
+.trat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(200,161,133,.18);
+}
+.trat-card {
+  background: #fff; padding: 44px 30px;
+  position: relative; overflow: hidden;
+  transition: background .35s, transform .35s;
+}
+.trat-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .35s;
+}
+.trat-card:hover { background: var(--dark); transform: translateY(-3px); }
+.trat-card:hover .tc-icon { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.25); color: #fff; }
+.trat-card:hover .tc-title { color: #fff; }
+.trat-card:hover .tc-text { color: rgba(255,255,255,.75); }
+.trat-card:hover::after { transform: scaleX(1); }
+.tc-icon {
+  width: 48px; height: 48px; background: var(--blush);
+  border: 1px solid var(--blush-mid); border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 22px; color: var(--gold);
+  transition: background .35s, border-color .35s, color .35s;
+}
+.tc-icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+  transition: filter .35s ease;
+  filter: brightness(0) saturate(100%) invert(58%) sepia(22%) saturate(520%) hue-rotate(349deg) brightness(95%) contrast(88%);
+}
+.trat-card:hover .tc-icon img {
+  filter: brightness(0) invert(1);
+}
+.tc-title {
+  font-size: var(--fs-h3);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  color: var(--dark);
+  margin-bottom: 12px;
+  transition: color .35s;
+}
+.tc-text {
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  color: var(--mid);
+  transition: color .35s;
+}
+
+/* ─── PERCHÉ NOI ──────────────────────────────────── */
+#perche { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+.perche-photo { position: relative; overflow: hidden; }
+.perche-photo img { height: 100%; object-position: center; transition: transform .8s ease; }
+.perche-photo:hover img { transform: scale(1.03); }
+.perche-badge {
+  position: absolute; bottom: 0; left: 0;
+  display: flex; align-items: center;
+}
+.pb-icon {
+  width: 44px; height: 44px; background: rgba(255,255,255,.2);
+  border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.pb-icon svg { width: 19px; height: 19px; stroke: #fff; fill: none; stroke-width: 1.4; stroke-linecap: round; }
+.perche-content {
+  background: var(--white);
+  padding: 88px 72px 88px 80px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.perche-list { margin-top: 44px; }
+.perche-item {
+  display: flex; gap: 18px;
+  padding: 30px 0; border-bottom: 1px solid rgba(200,161,133,.18);
+  opacity: 0; transform: translateX(22px);
+  transition: opacity .6s, transform .6s;
+}
+.perche-item:first-child { border-top: 1px solid rgba(200,161,133,.18); }
+.perche-item.visible { opacity: 1; transform: none; }
+.pi-icon {
+  width: 50px; height: 50px; background: var(--gold);
+  border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.pi-icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.4; stroke-linecap: round; }
+.pi-body { flex: 1; }
+.pi-title {
+  font-size: var(--fs-h3);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.pi-text { font-size: var(--fs-body); font-weight: 300; line-height: var(--lh-body); color: var(--mid); }
+
+/* ─── CONTATTI ────────────────────────────────────── */
+#contatti {
+  background: var(--cream);
+  padding: 110px 80px;
+  position: relative; overflow: hidden;
+}
+#contatti::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(200,161,133,.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.contatti-wrap {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 100px; align-items: center;
+}
+.ct-eye { color: var(--gold); }
+.ct-eye::before { background: var(--gold); }
+.ct-h2 { color: var(--dark); }
+.ct-h2 em { font-style: italic; color: var(--gold); }
+.ct-sub {
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  color: var(--mid);
+  letter-spacing: .01em;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.ct-right {
+  display: flex; flex-direction: column;
+}
+.ct-panel {
+  background: #fff;
+  border: 1px solid rgba(200,161,133,.18);
+  padding: 28px 30px;
+  border-radius: 2px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.ct-studio {
+  font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+  font-weight: 400;
+  line-height: var(--lh-tight);
+  color: var(--dark);
+}
+.ct-block {
+  padding-top: 18px;
+  border-top: 1px solid rgba(200,161,133,.2);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.ct-label {
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.ct-value {
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  color: var(--mid);
+}
+.ct-phones {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+}
+.ct-phone-link {
+  text-decoration: none;
+  display: flex; flex-direction: column; gap: 2px;
+  background: var(--blush);
+  border: 1px solid rgba(200,161,133,.25);
+  padding: 14px 16px;
+  transition: background .3s, border-color .3s;
+}
+.ct-phone-link:hover { background: var(--blush-mid); border-color: rgba(200,161,133,.45); }
+.ct-phone-k {
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--light);
+}
+.ct-phone-v {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  color: var(--gold);
+}
+.ct-mail {
+  color: var(--dark);
+  text-decoration: none;
+}
+.ct-mail:hover { color: var(--gold); }
+.ct-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ct-hours-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 20px;
+  align-items: baseline;
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-snug);
+}
+.ct-hours-day { color: var(--dark); font-weight: 400; }
+.ct-hours-time {
+  color: var(--mid);
+  text-align: right;
+  white-space: nowrap;
+}
+.ct-hours-row--closed .ct-hours-time { color: var(--light); }
+
+/* ─── FOOTER ──────────────────────────────────────── */
+footer {
+  background: #201a17;
+  border-top: 1px solid rgba(200,161,133,.2);
+  color: rgba(250,232,219,.72);
+}
+.footer-inner {
+  padding: 52px 80px 0;
+}
+.footer-main {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.55fr) repeat(3, minmax(168px, 1fr));
+  gap: 36px 56px;
+  align-items: start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(200,161,133,.14);
+}
+.ft-brand { min-width: 0; }
+.ft-logo {
+  display: inline-block;
+  margin-bottom: 16px;
+  line-height: 0;
+}
+.ft-logo img {
+  height: 88px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  display: block;
+}
+.ft-tagline {
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  color: rgba(250,232,219,.55);
+  max-width: 28ch;
+}
+.ft-col { min-width: 0; }
+.ft-heading {
+  font-family: var(--font);
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 16px;
+  padding: 0;
+  background: none;
+  border: none;
+}
+.ft-nav,
+.ft-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.ft-nav a,
+.ft-contact a {
+  color: rgba(250,232,219,.9);
+  text-decoration: none;
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-snug);
+  transition: color .2s ease;
+}
+.ft-nav a:hover,
+.ft-contact a:hover { color: var(--gold); }
+.ft-contact li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ft-contact-k {
+  font-size: var(--fs-small);
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(250,232,219,.4);
+}
+.ft-contact-tel {
+  font-size: var(--fs-body);
+  color: var(--gold);
+}
+.ft-address {
+  font-style: normal;
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-snug);
+  margin-bottom: 22px;
+}
+.ft-address a {
+  color: rgba(250,232,219,.88);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.ft-address a:hover { color: var(--gold); }
+.ft-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ft-hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(200,161,133,.1);
+  font-size: var(--fs-small);
+  font-weight: 300;
+}
+.ft-hours-row:last-child { border-bottom: none; padding-bottom: 0; }
+.ft-hours-day { color: rgba(250,232,219,.9); flex: 1; }
+.ft-hours-time {
+  color: rgba(250,232,219,.65);
+  text-align: right;
+  white-space: nowrap;
+}
+.ft-hours-row--closed .ft-hours-time { color: rgba(250,232,219,.38); }
+.ft-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 22px 0 28px;
+}
+.ft-copy {
+  font-size: var(--fs-small);
+  font-weight: 300;
+  color: rgba(250,232,219,.42);
+  line-height: var(--lh-snug);
+}
+.ft-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border: 1px solid rgba(200,161,133,.35);
+  color: var(--blush);
+  text-decoration: none;
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: .06em;
+  white-space: nowrap;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.ft-cta:hover {
+  background: rgba(200,161,133,.12);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.ft-cta svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+/* ─── ANIMATIONS ──────────────────────────────────── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
+@keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ─── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 1080px) {
+  .topbar, #nav, #contatti { padding-left: 32px; padding-right: 32px; }
+  #chi-siamo, #perche { grid-template-columns: 1fr; min-height: auto; }
+  .chi-content, .perche-content { padding: 64px 32px; }
+  .chi-photo, .perche-photo { min-height: 420px; }
+  .trat-header { grid-template-columns: 1fr; }
+  #trattamenti { padding: 80px 32px; }
+  .trat-grid { grid-template-columns: repeat(2, 1fr); }
+  .contatti-wrap { grid-template-columns: 1fr; gap: 52px; }
+  #contatti { padding: 80px 32px; }
+  .ct-phones { grid-template-columns: 1fr; }
+  .footer-inner { padding: 48px 32px 0; }
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 32px;
+  }
+  .ft-brand { grid-column: 1 / -1; max-width: none; }
+}
+@media (max-width: 700px) {
+  .topbar { display: none; }
+  .nav-links { display: none; }
+  .trat-grid { grid-template-columns: 1fr; }
+  .chi-stats { flex-direction: column; }
+  .hero-title { font-size: clamp(2.25rem, 9vw, 3.25rem); }
+  .footer-main { grid-template-columns: 1fr; gap: 32px; }
+  .ft-bar { flex-direction: column; align-items: flex-start; }
+  .ft-cta { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="tb-item">
+    <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.2"/></svg>
+    Roma, <strong>Zona EUR</strong>
+  </div>
+  <div class="tb-item">
+    <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+    <strong>+39 06 81566281</strong>
+  </div>
+  <div class="tb-item">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Lun–Giov 9:30–18:00 &nbsp;·&nbsp; Ven 9:30–14:00 &nbsp;·&nbsp; Sab–Dom chiuso
+  </div>
+  <div class="tb-social">
+    <a href="#" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+    </a>
+    <a href="#" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 11-8.1 1.2 4 4 0 018.1-1.2z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <img src="./immagini/loghi/logo carlotta pecora.png" alt="Logo Studio Dentistico Carlotta Pecora">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#chi-siamo">Chi Siamo</a></li>
+    <li><a href="#trattamenti">Trattamenti</a></li>
+    <li><a href="#perche">Perché Noi</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+  </ul>
+  <a href="tel:+390681566281" class="nav-call">
+    <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+    Chiama ora
+  </a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-body">
+    <p class="hero-eyebrow">Studio Dentistico · Roma EUR</p>
+    <h1 class="hero-title">Il tuo <em>sorriso</em>,<br>in buone mani.</h1>
+    <p class="hero-sub">Lo Studio Dentistico Carlotta Pecora, in zona EUR a Roma, offre odontoiatria e medicina estetica facciale con percorsi personalizzati, tecnologie moderne e attenzione costante al paziente.</p>
+    <div class="hero-cta-group">
+      <a href="tel:+390681566281" class="hero-cta-main">
+        <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+        Chiama per prenotare
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CHI SIAMO ══ -->
+<section id="chi-siamo">
+  <div class="chi-content reveal">
+    <div class="sec-eye">Chi Siamo</div>
+    <h2 class="sec-h2">Studio Dentistico <em>Carlotta Pecora</em> a Roma EUR</h2>
+    <p class="sec-h3">Accessibilità, qualità e cura per ogni famiglia</p>
+    <p class="sec-body">Nel nostro studio dentistico a Roma EUR crediamo che la salute orale debba essere accessibile a tutti. Un <strong>team giovane e professionale</strong> offre ogni giorno cure odontoiatriche di alta qualità con un approccio umano, attento e personalizzato.</p>
+    <p class="sec-body">Il nostro obiettivo è seguire il paziente in ogni fase del percorso, con ascolto e trasparenza, in un ambiente accogliente dove sentirsi <strong>tranquillo e seguito</strong> fin dal primo incontro.</p>
+    <p class="sec-body">Competenza clinica, tecnologie moderne, attenzione ai dettagli e continuità assistenziale guidano ogni trattamento, dall'igiene orale alla <strong>medicina estetica facciale</strong>.</p>
+    <div class="chi-stats">
+      <div class="chi-stat">
+        <span class="chi-stat-n">2+</span>
+        <span class="chi-stat-l">Generazioni di cura</span>
+      </div>
+      <div class="chi-stat">
+        <span class="chi-stat-n">7+</span>
+        <span class="chi-stat-l">Specialità</span>
+      </div>
+      <div class="chi-stat">
+        <span class="chi-stat-n">EUR</span>
+        <span class="chi-stat-l">Cuore di Roma</span>
+      </div>
+    </div>
+  </div>
+  <div class="chi-photo">
+    <img src="./immagini/chi-siamo-carlotta-pecora.png?v=2" alt="Dott.ssa Carlotta Pecora, studio dentistico Roma EUR">
+    <div class="chi-tag">
+      <p>Dott.ssa Carlotta Pecora</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRATTAMENTI ══ -->
+<section id="trattamenti">
+  <div class="trat-header reveal">
+    <div>
+      <div class="sec-eye">I Nostri Trattamenti</div>
+      <h2 class="sec-h2">Trattamenti odontoiatrici<br>e <em>medicina estetica</em> a Roma EUR</h2>
+    </div>
+    <p class="trat-intro">La nostra offerta clinica copre tutte le principali aree dell'odontoiatria: prevenzione, conservativa, estetica, chirurgia orale, implantologia, ortodonzia e pedodonzia. A queste affianchiamo la medicina estetica facciale, con trattamenti mirati per valorizzare il volto in armonia con il sorriso.</p>
+  </div>
+  <div class="trat-grid">
+    <div class="trat-card reveal">
+      <div class="tc-icon"><img src="./immagini/icone/Prevenzione ed igene.svg" alt="" width="30" height="30"></div>
+      <h3 class="tc-title">Prevenzione & Igiene</h3>
+      <p class="tc-text">Il nostro servizio di punta. Sedute professionali e controlli periodici per proteggere denti, gengive e salute orale nel lungo periodo.</p>
+    </div>
+    <div class="trat-card reveal" style="transition-delay:.08s">
+      <div class="tc-icon"><img src="./immagini/icone/Odontoiatria Conservativa.svg" alt="" width="30" height="30"></div>
+      <h3 class="tc-title">Odontoiatria Conservativa</h3>
+      <p class="tc-text">Otturazioni estetiche e terapie conservative per curare carie e lesioni, preservando il più possibile il dente naturale.</p>
+    </div>
+    <div class="trat-card reveal" style="transition-delay:.16s">
+      <div class="tc-icon"><img src="./immagini/icone/Estetica Dentale.svg" alt="" width="30" height="30"></div>
+      <h3 class="tc-title">Estetica Dentale</h3>
+      <p class="tc-text">Sbiancamento professionale, faccette e restauri estetici per migliorare forma, colore e armonia del sorriso in modo naturale.</p>
+    </div>
+    <div class="trat-card reveal" style="transition-delay:.04s">
+      <div class="tc-icon"><img src="./immagini/icone/Chirurgia orale.svg" alt="" width="30" height="30"></div>
+      <h3 class="tc-title">Chirurgia Orale</h3>
+      <p class="tc-text">Interventi mirati di chirurgia orale eseguiti con protocolli sicuri e pianificazione accurata, per un recupero più sereno.</p>
+    </div>
+    <div class="trat-card reveal" style="transition-delay:.12s">
+      <div class="tc-icon"><img src="./immagini/icone/impiantologia.svg" alt="" width="30" height="30"></div>
+      <h3 class="tc-title">Implantologia</h3>
+      <p class="tc-text">Soluzioni implantari per sostituire elementi mancanti con stabilità, funzionalità ed estetica, rispettando anatomia e comfort del paziente.</p>
+    </div>
+    <div class="trat-card reveal" style="transition-delay:.24s">
+      <div class="tc-icon"><img src="./immagini/icone/Ortodonzia.svg" alt="" width="30" height="30"></div>
+      <h3 class="tc-title">Ortodonzia</h3>
+      <p class="tc-text">Apparecchi tradizionali e allineatori trasparenti per bambini, adolescenti e adulti, con piani ortodontici su misura.</p>
+    </div>
+    <div class="trat-card reveal" style="transition-delay:.20s">
+      <div class="tc-icon"><img src="./immagini/icone/Pedodonzia.svg" alt="" width="30" height="30"></div>
+      <h3 class="tc-title">Pedodonzia</h3>
+      <p class="tc-text">Cure dentali dedicate ai bambini in un contesto rassicurante, con attenzione alla prevenzione e alla crescita corretta del sorriso.</p>
+    </div>
+    <div class="trat-card reveal" style="transition-delay:.28s">
+      <div class="tc-icon"><img src="./immagini/icone/Medicina estetica facciale.svg" alt="" width="30" height="30"></div>
+      <h3 class="tc-title">Medicina Estetica Facciale</h3>
+      <p class="tc-text">Trattamenti per il viso, in particolare per labbra, punta del naso e zigomi, studiati per risultati naturali e proporzionati.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PERCHÉ NOI ══ -->
+<section id="perche">
+  <div class="perche-photo">
+    <img src="./immagini/perché-sceglierci-carlotta-pecora.jpg" alt="Studio Dentistico Carlotta Pecora Roma EUR">
+    <div class="perche-badge">
+      <div class="pb-txt">
+        <p>Medici altamente esperti</p>
+      </div>
+    </div>
+  </div>
+  <div class="perche-content reveal">
+    <div class="sec-eye">Perché Sceglierci</div>
+    <h2 class="sec-h2">Perché scegliere il nostro<br>studio dentistico a <em>Roma EUR</em></h2>
+    <div class="perche-list">
+      <div class="perche-item">
+        <div class="pi-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="pi-body">
+          <h3 class="pi-title">Competenza ed esperienza familiare</h3>
+          <p class="pi-text">Esperienza familiare e formazione specialistica permettono di offrire terapie odontoiatriche aggiornate, sicure e orientate alla qualità clinica.</p>
+        </div>
+      </div>
+      <div class="perche-item" style="transition-delay:.1s">
+        <div class="pi-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="pi-body">
+          <h3 class="pi-title">Tecnologie all'avanguardia</h3>
+          <p class="pi-text">Utilizziamo tecnologie moderne per diagnosi precise e trattamenti minimamente invasivi, con maggiore comfort durante ogni fase della cura.</p>
+        </div>
+      </div>
+      <div class="perche-item" style="transition-delay:.2s">
+        <div class="pi-icon"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21.2l7.8-7.7 1-1a5.5 5.5 0 000-7.8z"/></svg></div>
+        <div class="pi-body">
+          <h3 class="pi-title">Cura del paziente al centro</h3>
+          <p class="pi-text">Ogni piano terapeutico è personalizzato: ascolto, trasparenza su costi e tempi, e un ambiente sereno anche per i pazienti più ansiosi.</p>
+        </div>
+      </div>
+      <div class="perche-item" style="transition-delay:.3s; border-bottom:none">
+        <div class="pi-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></div>
+        <div class="pi-body">
+          <h3 class="pi-title">Accessibilità per tutta la famiglia</h3>
+          <p class="pi-text">Seguiamo pazienti in tutta l'area EUR con soluzioni adatte a ogni esigenza clinica, dall'igiene professionale ai trattamenti più complessi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTATTI ══ -->
+<section id="contatti">
+  <div class="contatti-wrap">
+    <div class="ct-left reveal">
+      <div class="sec-eye ct-eye">Contatti</div>
+      <h2 class="sec-h2 ct-h2">Contatti studio dentistico<br>a <em>Roma EUR</em></h2>
+      <p class="ct-sub">Hai domande o vuoi prenotare una visita? Contattaci: siamo a disposizione per informazioni, appuntamenti e per accompagnarti nel primo passo verso il tuo percorso di cura. Qui trovi indirizzo, telefoni, orari e mail dello studio.</p>
+    </div>
+    <div class="ct-right reveal" style="transition-delay:.15s">
+      <div class="ct-panel">
+        <p class="ct-studio">Studio dentistico<br>Carlotta Pecora</p>
+        <div class="ct-block">
+          <p class="ct-label">Indirizzo</p>
+          <p class="ct-value">Viale America 111 | Piano 3 int. 16<br>00144 Roma</p>
+        </div>
+        <div class="ct-block">
+          <p class="ct-label">Telefoni</p>
+          <div class="ct-phones">
+            <a class="ct-phone-link" href="tel:+390681566281">
+              <span class="ct-phone-v">+39 06 81566281</span>
+            </a>
+            <a class="ct-phone-link" href="tel:+393520147264">
+              <span class="ct-phone-v">+39 352 0147264</span>
+            </a>
+          </div>
+        </div>
+        <div class="ct-block">
+          <p class="ct-label">Orari</p>
+          <div class="ct-hours">
+            <div class="ct-hours-row">
+              <span class="ct-hours-day">Lunedì – Giovedì</span>
+              <span class="ct-hours-time">9:30 – 18:00</span>
+            </div>
+            <div class="ct-hours-row">
+              <span class="ct-hours-day">Venerdì</span>
+              <span class="ct-hours-time">9:30 – 14:00</span>
+            </div>
+            <div class="ct-hours-row ct-hours-row--closed">
+              <span class="ct-hours-day">Sabato e Domenica</span>
+              <span class="ct-hours-time">Chiuso</span>
+            </div>
+          </div>
+        </div>
+        <div class="ct-block">
+          <p class="ct-label">Mail</p>
+          <p class="ct-value"><a class="ct-mail" href="mailto:info@studiocarlottapecora.com">info@studiocarlottapecora.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="ft-brand">
+        <a href="#hero" class="ft-logo" aria-label="Torna all'inizio — Studio Dentistico Carlotta Pecora">
+          <img src="./immagini/loghi/logo carlotta pecora - bianco.png" alt="Studio Dentistico Carlotta Pecora">
+        </a>
+        <p class="ft-tagline">Cura, qualità e fiducia per tutta la famiglia nel cuore dell'EUR.</p>
+      </div>
+      <div class="ft-col">
+        <h3 class="ft-heading">Navigazione</h3>
+        <ul class="ft-nav">
+          <li><a href="#chi-siamo">Chi siamo</a></li>
+          <li><a href="#trattamenti">Trattamenti</a></li>
+          <li><a href="#perche">Perché sceglierci</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h3 class="ft-heading">Contatti</h3>
+        <ul class="ft-contact">
+          <li>
+            <span class="ft-contact-k">Telefono studio</span>
+            <a class="ft-contact-tel" href="tel:+390681566281">+39 06 81566281</a>
+          </li>
+          <li>
+            <span class="ft-contact-k">Cellulare</span>
+            <a class="ft-contact-tel" href="tel:+393520147264">+39 352 0147264</a>
+          </li>
+          <li>
+            <span class="ft-contact-k">Email</span>
+            <a href="mailto:info@studiocarlottapecora.com">info@studiocarlottapecora.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h3 class="ft-heading">Sede e orari</h3>
+        <address class="ft-address">
+          <a href="https://www.google.com/maps/search/?api=1&query=Viale+America+111+00144+Roma" target="_blank" rel="noopener noreferrer">
+            Viale America 111, Piano 3 int. 16<br>00144 Roma (EUR)
+          </a>
+        </address>
+        <div class="ft-hours" aria-label="Orari di apertura">
+          <div class="ft-hours-row">
+            <span class="ft-hours-day">Lunedì – Giovedì</span>
+            <span class="ft-hours-time">9:30 – 18:00</span>
+          </div>
+          <div class="ft-hours-row">
+            <span class="ft-hours-day">Venerdì</span>
+            <span class="ft-hours-time">9:30 – 14:00</span>
+          </div>
+          <div class="ft-hours-row ft-hours-row--closed">
+            <span class="ft-hours-day">Sabato e Domenica</span>
+            <span class="ft-hours-time">Chiuso</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bar">
+      <p class="ft-copy">© Studio Dentistico Carlotta Pecora · Tutti i diritti riservati</p>
+      <a href="tel:+390681566281" class="ft-cta">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+        Chiama lo studio
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('shadow', scrollY > 10));
+const io = new IntersectionObserver(
+  es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: .1, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.reveal, .perche-item').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
