@@ -586,9 +586,9 @@ footer {
   line-height: 0;
 }
 .ft-logo img {
-  height: 114px;
+  height: 91px;
   width: auto;
-  max-width: 312px;
+  max-width: 250px;
   object-fit: contain;
   display: block;
 }
@@ -716,6 +716,11 @@ footer {
   background: rgba(200,161,133,.12);
   border-color: var(--gold);
   color: var(--gold);
+}
+.ft-policies {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 .ft-cta svg {
   width: 15px;
@@ -850,7 +855,7 @@ footer {
   .ct-hours-time { text-align: left; white-space: normal; }
   .footer-inner { padding: 40px 20px 0; }
   .footer-main { grid-template-columns: 1fr; gap: 32px; }
-  .ft-logo img { height: 96px; max-width: 260px; }
+  .ft-logo img { height: 77px; max-width: 208px; }
   .ft-bar { flex-direction: column; align-items: stretch; gap: 16px; }
   .ft-cta { width: 100%; justify-content: center; }
   .ft-hours-row {
@@ -876,7 +881,7 @@ footer {
   #trattamenti, #contatti { padding: 56px 16px; }
   .trat-card { padding: 28px 20px; }
   .footer-inner { padding: 36px 16px 0; }
-  .ft-logo img { height: 84px; }
+  .ft-logo img { height: 67px; }
 }
 </style>
 </head>
@@ -1189,8 +1194,10 @@ footer {
     </div>
     <div class="ft-bar">
       <p class="ft-copy">© Studio Dentistico Carlotta Pecora · Tutti i diritti riservati</p>
-      <a href="#" class="ft-cta">Privacy Policy</a>
-      <a href="#" class="ft-cta">Cookie Policy</a>
+      <div class="ft-policies">
+        <a href="#" class="ft-cta">Privacy Policy</a>
+        <a href="#" class="ft-cta">Cookie Policy</a>
+      </div>
     </div>
   </div>
 </footer>
