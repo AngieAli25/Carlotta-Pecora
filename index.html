@@ -94,13 +94,13 @@ h1, h2, h3,
   background: rgba(255,255,255,.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(200,161,133,.13);
-  height: 112px; padding: 0 64px;
+  height: auto; padding: 20px 64px;
   display: flex; align-items: center; justify-content: space-between;
   transition: box-shadow .3s;
 }
 #nav.shadow { box-shadow: 0 4px 32px rgba(200,161,133,.12); }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo img { height: 106px; width: auto; max-width: 412px; object-fit: contain; }
+.nav-logo img { height: 72px; width: auto; max-width: 280px; object-fit: contain; }
 .nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
 .nav-links a { font-size: var(--fs-ui); font-weight: 400; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color .3s; }
 .nav-links a:hover { color: var(--gold); }
@@ -765,11 +765,11 @@ footer {
   }
   .topbar { display: none; }
   #nav {
-    height: 80px;
-    padding: 0 20px;
+    height: auto;
+    padding: 20px 20px;
     gap: 12px;
   }
-  .nav-logo img { height: 70px; max-width: 264px; }
+  .nav-logo img { height: 48px; max-width: 180px; }
   .nav-toggle { display: flex; }
   .nav-panel {
     margin-left: 0;
@@ -863,8 +863,8 @@ footer {
 }
 
 @media (max-width: 480px) {
-  #nav { height: 74px; padding: 0 16px; }
-  .nav-logo img { height: 62px; max-width: 228px; }
+  #nav { height: auto; padding: 20px 16px; }
+  .nav-logo img { height: 42px; max-width: 156px; }
   .nav-panel { width: 100%; max-width: none; padding-top: 80px; }
   .hero-body { padding: 88px 16px 40px; }
   .hero-eyebrow { font-size: 0.6875rem; letter-spacing: .18em; }
@@ -910,7 +910,7 @@ footer {
 <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 <nav id="nav">
   <a href="#hero" class="nav-logo">
-    <img src="./immagini/loghi/logo carlotta pecora.png" alt="Logo Studio Dentistico Carlotta Pecora">
+    <img src="./immagini/loghi/logo carlotta pecora - orizzontale.png" alt="Logo Studio Dentistico Carlotta Pecora">
   </a>
   <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-panel">
     <span class="nav-toggle-bar"></span>
@@ -1134,7 +1134,7 @@ footer {
     <div class="footer-main">
       <div class="ft-brand">
         <a href="#hero" class="ft-logo" aria-label="Torna all'inizio — Studio Dentistico Carlotta Pecora">
-          <img src="./immagini/loghi/logo carlotta pecora - bianco.png" alt="Studio Dentistico Carlotta Pecora">
+          <img src="./immagini/loghi/logo carlotta pecora bianco  - orizzontale.png" alt="Studio Dentistico Carlotta Pecora">
         </a>
         <p class="ft-tagline">Cura, qualità e fiducia per tutta la famiglia nel cuore dell'EUR.</p>
       </div>
@@ -1189,10 +1189,8 @@ footer {
     </div>
     <div class="ft-bar">
       <p class="ft-copy">© Studio Dentistico Carlotta Pecora · Tutti i diritti riservati</p>
-      <a href="tel:+390681566281" class="ft-cta">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
-        Chiama lo studio
-      </a>
+      <a href="#" class="ft-cta">Privacy Policy</a>
+      <a href="#" class="ft-cta">Cookie Policy</a>
     </div>
   </div>
 </footer>
